@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
 
 # PostgreSQL driver
 gem 'pg'
@@ -13,6 +12,8 @@ gem 'activerecord', '~>4.1'
 gem 'bcrypt-ruby'
 
 gem 'rake'
+
+gem 'sinatra-flash'
 
 gem 'shotgun'
 
