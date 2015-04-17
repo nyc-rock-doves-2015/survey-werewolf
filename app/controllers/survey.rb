@@ -8,9 +8,13 @@ get '/surveys/create' do
 end
 
 post '/surveys/create' do
-  puts params
-  # Survey.create(title: )
+  title = params[:title]
+  new_survey = Survey.create(title: title, user_id: 1)
+  # params.each_key do |question|
+  #   if question
+  #   new_survey
 end
+
 get '/surveys/user/:id' do |id|
   @user = User.find(id)
   @surveys = @user.surveys
