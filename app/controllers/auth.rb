@@ -1,5 +1,9 @@
 enable :sessions
 
+get '/' do
+  erb :'/welcome'
+end
+
 get '/login' do
   if current_user
     redirect '/'
