@@ -1,7 +1,11 @@
 <form method="POST" action="">
   <label>Question</label>
+    <input type="text" name="question">
   <label>Answer Type</label>
-
+    <select class="select-answer-type">
+      <option value="radio">Choose One</option>
+      <option value="checkbox">Choose Many</option>
+    </select>
   <div class="answer-option-container">
     <%= erb :'_answer-option' %>
   </div>
