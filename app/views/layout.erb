@@ -21,10 +21,12 @@
 </head>
 <body>
 <div id="content">
-  <%= erb :'_nav-top' %>
-  <header>
-  </header>
-  <%= yield %>
+  <div class="app-container">
+    <%= erb :'_nav-top' %>
+    <header>
+    </header>
+    <%= yield %>
+  </div>
 </div>
 </body>
 </html>
