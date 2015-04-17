@@ -2,7 +2,7 @@ enable :sessions
 
 get '/surveys' do
   @surveys = Survey.all
-  "List of surveys"
+  erb :'/all_surveys'
 end
 
 get '/surveys/create' do
