@@ -7,6 +7,10 @@ get '/surveys/create' do
   erb :'/make-survey/make-survey'
 end
 
+post '/surveys/create' do
+  puts params
+  # Survey.create(title: )
+end
 get '/surveys/user/:id' do |id|
   @user = User.find(id)
   @surveys = @user.surveys
