@@ -1,7 +1,8 @@
 enable :sessions
 
-get '/' do
-  erb :'/welcome'
+
+get "/" do
+  erb :welcome
 end
 
 get '/login' do
