@@ -4,7 +4,8 @@ html, body {
 }
 
 .app-container {
-    border: 1px solid black;
+    display: block;
+    border: 1px dotted black;
     width: 80%;
     margin-left: 10%;
     margin-top: 1em;
@@ -12,6 +13,46 @@ html, body {
 
 h1 {
     text-align: center;
+}
+
+button {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+nav {
+    height: 30px;
+    width: 100%;
+    padding-bottom: 1em;
+    background: grey;
+}
+
+nav ul {
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+nav li {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-left {
+    float: left;
+}
+
+.nav-right {
+    float: right;
+}
+
+.nav-left li {
+    padding-right: .5em;
+}
+
+.nav-right li {
+    padding-left: .5em;
 }
 
 .welcome-button-container {
