@@ -25,35 +25,36 @@ nav {
     width: 100%;
     padding-bottom: 1em;
     background: midnightblue;
-}
 
-nav ul {
+    ul {
     padding-left: .5em;
     padding-right: .5em;
-}
 
-nav li {
-    display: inline-block;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    color: white;
-}
+        li {
+        display: inline-block;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: white;
+        }
 
-.nav-left {
-    float: left;
-}
+    }
 
-.nav-right {
-    float: right;
-}
+    .nav-left {
+        float: left;
 
-.nav-left li {
-    padding-right: .5em;
-}
+        li {
+            padding-right: .5em;
+        }
+    }
 
-.nav-right li {
-    padding-left: .5em;
+    .nav-right {
+        float: right;
+
+        li {
+            padding-left: .5em;
+        }
+    }
 }
 
 .welcome-button-container {

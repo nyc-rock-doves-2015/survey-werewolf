@@ -1,0 +1,46 @@
+html, body {
+  width: 100%;
+  height: 100%; }
+
+.app-container {
+  display: block;
+  border: 1px dotted black;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 1em; }
+
+h1 {
+  text-align: center; }
+
+button {
+  padding-top: .5em;
+  padding-bottom: .5em; }
+
+nav {
+  height: 30px;
+  width: 100%;
+  padding-bottom: 1em;
+  background: midnightblue; }
+  nav ul {
+    padding-left: .5em;
+    padding-right: .5em; }
+    nav ul li {
+      display: inline-block;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: white; }
+  nav .nav-left {
+    float: left; }
+    nav .nav-left li {
+      padding-right: .5em; }
+  nav .nav-right {
+    float: right; }
+    nav .nav-right li {
+      padding-left: .5em; }
+
+.welcome-button-container {
+  margin-left: 35%;
+  padding-bottom: 1em; }
+
+/*# sourceMappingURL=application.css.map */
