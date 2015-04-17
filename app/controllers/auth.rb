@@ -4,21 +4,21 @@ get "/" do
   erb :welcome
 end
 
-get '/login' do
+get '/signin' do
   if current_user
     redirect '/'
   else
-    erb :'auth/login'
+    erb :'auth/signin'
   end
 end
 
-post '/login' do
+post '/signin' do
   user = User.find_by(name: params[:name])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
   else
     flash[:error] = "Could not find your account. Please try again."
-    redirect '/login'
+    redirect '/signin'
   end
   redirect '/'
 end
@@ -47,7 +47,7 @@ post '/signup' do
   redirect '/signup'
 end
 
-get '/logout' do
+get '/signout' do
   session[:user_id] = nil
   redirect '/'
 end
