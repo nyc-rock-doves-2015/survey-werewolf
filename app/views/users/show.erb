@@ -1,4 +1,10 @@
-<h1>user: <%=@user.name%></h1>
+<h1>User: <u><%=@user.name%></u></h1>
 
-<a href="#">Created Surveys</a>
+<h4>Created Surveys</h4>
+<ol>
+<% @user.surveys.each do |survey| %>
+  <li><a href="/surveys/<%="#{survey.id}"%>"><%=survey.title%></a></li>
+<% end %>
+</ol>
+
 <a href="#">Taken Surveys</a>
