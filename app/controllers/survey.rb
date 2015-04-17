@@ -25,3 +25,14 @@ get '/surveys/:id' do |id|
   erb :'/take-survey/take-survey'
 end
 
+# should redirect to users survey page
+delete '/surveys/:id/delete' do |id|
+  survey = survey.find(id)
+  questions = survey.questions
+  survey.destroy
+  questions.each do |question|
+    question.destroy
+  end
+  redirect '/'
+end
+
