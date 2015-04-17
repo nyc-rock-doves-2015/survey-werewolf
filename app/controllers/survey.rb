@@ -33,6 +33,8 @@ end
 #If logged in: take/view results if already taken
 #If not logged in: redirect to signup/signin
 get '/surveys/:id' do |id|
+  @survey = Survey.find(id)
+  @questions = @survey.questions
   erb :'/take-survey/take-survey'
 end
 
