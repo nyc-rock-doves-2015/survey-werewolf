@@ -1,4 +1,5 @@
 get '/surveys' do
+  @surveys = Survey.all
   "List of surveys"
 end
 
@@ -10,6 +11,11 @@ get '/surveys/user/:id' do |id|
   @user = User.find(id)
   @surveys = @user.surveys
   "List of #{@user.name}'s surveys"
+end
+
+get '/surveys/:id/results' do |id|
+  @survey = Survey.find(id)
+  "Results of #{@survey.title}"
 end
 
 #If owner: edit/delete/view results
