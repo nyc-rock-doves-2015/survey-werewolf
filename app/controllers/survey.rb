@@ -1,3 +1,5 @@
+enable :sessions
+
 get '/surveys' do
   @surveys = Survey.all
   "List of surveys"
