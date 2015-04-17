@@ -10,9 +10,7 @@ end
 post '/surveys/create' do
   title = params[:title]
   new_survey = Survey.create(title: title, user_id: 1)
-  # params.each_key do |question|
-  #   if question
-  #   new_survey
+  new_survey.questions.create(question_desc: params[:question])
 end
 
 get '/surveys/user/:id' do |id|
