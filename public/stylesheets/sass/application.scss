@@ -1,3 +1,10 @@
+/* Variables */
+
+$background-color: midnightblue;
+
+
+/* Styles */
+
 html, body {
     width: 100%;
     height: 100%;
@@ -24,36 +31,37 @@ nav {
     height: 30px;
     width: 100%;
     padding-bottom: 1em;
-    background: midnightblue;
-}
+    background: $background-color;
 
-nav ul {
+    ul {
     padding-left: .5em;
     padding-right: .5em;
-}
 
-nav li {
-    display: inline-block;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    color: white;
-}
+        li {
+        display: inline-block;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: white;
+        }
 
-.nav-left {
-    float: left;
-}
+    }
 
-.nav-right {
-    float: right;
-}
+    .nav-left {
+        float: left;
 
-.nav-left li {
-    padding-right: .5em;
-}
+        li {
+            padding-right: .5em;
+        }
+    }
 
-.nav-right li {
-    padding-left: .5em;
+    .nav-right {
+        float: right;
+
+        li {
+            padding-left: .5em;
+        }
+    }
 }
 
 .welcome-button-container {
