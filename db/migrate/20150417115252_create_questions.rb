@@ -3,7 +3,7 @@ class CreateQuestions < ActiveRecord::Migration
     create_table :questions do |t|
       t.string :question_desc, null: false
       t.references :survey, null: false
-      t.references :answer, null: false
+      t.references :answer
 
       t.timestamps
     end
