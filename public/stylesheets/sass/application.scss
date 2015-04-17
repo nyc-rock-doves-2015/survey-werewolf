@@ -1,9 +1,10 @@
 @import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
 
 /* Variables */
 
 $background-color: midnightblue;
-
 
 /* Styles */
 
@@ -46,7 +47,6 @@ nav {
         margin: 0;
         color: white;
         }
-
     }
 
     .nav-left {
