@@ -16,6 +16,9 @@ post '/surveys/create' do
   new_question = new_survey.questions.create(question_desc: params[:question])
   new_question.answers.create(answer_text: params['answer-option'])
   redirect "/surveys/#{new_survey.id}"
+
+  # survey = Sur.create(title: params[:survey][:title], user_id: current_user.id)
+
 end
 
 get '/surveys/user/:id' do |id|
@@ -50,14 +53,14 @@ delete '/surveys/:id/delete' do |id|
 end
 
 # carrierwave file uploader
-post '/imageupload' do
-  # app root is breaking this
-  File.open(File.join(APP_root, 'uploads', params[:thefile][:filename]), 'w') do |f|
-    f.write(params[:thefile][:tempfile].read)
+# post '/uploads' do
+#   user = current_user
+#   @uploaded_file = user.uploads.create :filepath => params[:upload]
+#   u.save!
+  
+#   @uploaded_file.to_s  
+# end
 
-  end
-  "file uploaded!"
-end
 
 
 

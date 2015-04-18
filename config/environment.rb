@@ -20,6 +20,8 @@ require "sinatra/reloader" if development?
 require 'sinatra/flash'
 
 require 'erb'
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
 
 
 # Some helper constants for path-centric logic
@@ -45,3 +47,10 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+CarrierWave.configure do |config|
+  config.storage = :file
+  config.root = APP_ROOT + 'public'
+  config.store_dir = "/uploads"
+end
+
