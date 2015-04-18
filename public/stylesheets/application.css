@@ -1900,6 +1900,7 @@ html {
   background: #40526b;
   padding: 1.5em;
   width: 100%;
+  position: absolute;
   bottom: 0;
   display: inline-block; }
   .footer-2 .footer-logo {
@@ -2448,6 +2449,10 @@ html {
     background-color: #f7f7f7; }
     .card:active .card-header {
       background-color: #f7f7f7; }
+
+.container form {
+  width: 50%;
+  margin: 0 auto; }
 
 /* Variables */
 /* Styles */
