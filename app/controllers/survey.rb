@@ -43,7 +43,11 @@ end
 delete '/surveys/:id/delete' do |id|
   survey = survey.find(id)
   questions = survey.questions
+  answers = questions.answers
   survey.destroy
+  answers.each do |answer|
+    answer.destroy
+  end
   questions.each do |question|
     question.destroy
   end
