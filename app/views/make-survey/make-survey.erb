@@ -8,19 +8,12 @@
 7. Whenever they want, they click "submit question."
 8. At any time after they've submitted ONE question, they can click a "create survey" button that lives outside of the question creation form. -->
 
+<!-- Tucker & Charles: follow the action and controller logic to see how this path
+  gets us to adding questions. LTK -->
 <form class="name-survey-form" method="POST" action="/surveys/create">
   <label>Survey Title</label>
   <input type="text" name="title">
   <input type="submit" value="Create Survey">
 </form>
 
-<form class="make-survey-form" method="POST" action="">
-	<h1>Add A Question</h1>
 
-	<!-- this needs to be a button -->
-  <span id="add-question-field">Add Question</span>
-  <div class="question-container"></div>
-  <p>
-  <input type="submit" value="Submit Question">
-  </p>
-</form>

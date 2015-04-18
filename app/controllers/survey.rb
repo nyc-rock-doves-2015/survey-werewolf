@@ -9,12 +9,11 @@ get '/surveys/create' do
   erb :'/make-survey/make-survey'
 end
 
-#TODO: figure out how to handle multi-question/answer creation
 post '/surveys/create' do
   title = params[:title]
-  new_survey = Survey.create(title: title, user_id: 1)
+  @survey = Survey.create(title: title, user_id: session[:user_id])
   # Tucker: see controllers/question.rb for where the code here was moved. -LTK
-  redirect "/surveys/#{new_survey.id}"
+  redirect '/surveys/#{session[:user_id]}/question'
 end
 
 get '/surveys/user/:id' do |id|
