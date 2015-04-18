@@ -19,7 +19,8 @@ end
 
 post '/surveys/create' do
   title = params[:title]
-  @survey = Survey.create(title: title, user_id: session[:user_id])
+  image = params[:image]
+  @survey = Survey.create(title: title, user_id: session[:user_id], image: image);
   redirect "/surveys/#{@survey.id}/question"
 end
 
@@ -44,6 +45,7 @@ get '/surveys/:id' do |id|
 end
 
 # should redirect to users survey page
+# need to destroy image as well?
 delete '/surveys/:id/delete' do |id|
   survey = survey.find(id)
   questions = survey.questions
@@ -57,4 +59,16 @@ delete '/surveys/:id/delete' do |id|
   end
   redirect '/'
 end
+
+# carrierwave file uploader
+# post '/uploads' do
+#   user = current_user
+#   @uploaded_file = user.uploads.create :filepath => params[:upload]
+#   u.save!
+
+#   @uploaded_file.to_s
+# end
+
+
+
 
