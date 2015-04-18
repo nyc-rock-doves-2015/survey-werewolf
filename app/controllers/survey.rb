@@ -2,7 +2,7 @@ enable :sessions
 
 get '/surveys' do
   @surveys = Survey.all
-  "List of surveys"
+  erb :'/all_surveys'
 end
 
 get '/surveys/create' do
@@ -33,6 +33,8 @@ end
 #If logged in: take/view results if already taken
 #If not logged in: redirect to signup/signin
 get '/surveys/:id' do |id|
+  @survey = Survey.find(id)
+  @questions = @survey.questions
   erb :'/take-survey/take-survey'
 end
 
