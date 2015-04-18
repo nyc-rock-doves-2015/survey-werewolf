@@ -12,8 +12,8 @@ end
 post '/surveys/create' do
   title = params[:title]
   @survey = Survey.create(title: title, user_id: session[:user_id])
-  # Tucker: see controllers/question.rb for where the code here was moved. -LTK
-  redirect '/surveys/#{session[:user_id]}/question'
+  # # Tucker: see controllers/question.rb for where the code here was moved. -LTK
+  redirect "/surveys/#{@survey.id}/question"
 end
 
 get '/surveys/user/:id' do |id|
