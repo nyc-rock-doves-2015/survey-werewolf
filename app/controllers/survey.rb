@@ -49,3 +49,15 @@ delete '/surveys/:id/delete' do |id|
   redirect '/'
 end
 
+# carrierwave file uploader
+post '/imageupload' do
+  # app root is breaking this
+  File.open(File.join(APP_root, 'uploads', params[:thefile][:filename]), 'w') do |f|
+    f.write(params[:thefile][:tempfile].read)
+
+  end
+  "file uploaded!"
+end
+
+
+
