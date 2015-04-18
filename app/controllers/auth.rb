@@ -17,6 +17,7 @@ post '/signin' do
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
   else
+    # add bourbon component here
     flash[:error] = "Could not find your account. Please try again."
     redirect '/signin'
   end

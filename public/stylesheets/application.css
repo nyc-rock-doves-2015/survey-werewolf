@@ -2165,6 +2165,15 @@ html {
     content: "";
     display: table; }
 
+.container {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%; }
+  .container:last-child {
+    margin-right: 0; }
+
 button, input[type="button"], input[type="reset"], input[type="submit"],
 button {
   -webkit-appearance: none;

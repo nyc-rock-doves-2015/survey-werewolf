@@ -1,7 +1,13 @@
 <% @questions.each do |question| %>
   <h3><%=question.question_desc%></h3>
     <%question.answers.each do |answer|%>
-    <p><%=answer.answer_text %></p>
+	 <div class="button-group">
+	  <label>
+	    <input type="radio" name="button-group" value="item" checked>
+	    <span class="button-group-item">
+	    <%=answer.answer_text %></span>
+	  </label>
+	</div>
     <% end %>
 <% end %>
 
