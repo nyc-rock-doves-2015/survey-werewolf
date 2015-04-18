@@ -5,9 +5,12 @@ get '/surveys/:id/question' do |id|
 end
 
 # Add a new question to a survey.
-post '/surveys/:id/question' do |id|
+put '/surveys/:id/question' do |id|
   survey = Survey.find(id)
   new_question = survey.questions.create(question_desc: params[:question])
-  new_question.answers.create(answer_text: params['answer-option'])
-  # where do we go from here?
+  params.each_key do |param|
+    if param.include?("answer-option")
+      new_question.answers.create(answer_text: params[param])
+    end
+  end
 end
