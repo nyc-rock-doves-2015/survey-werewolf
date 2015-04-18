@@ -9,16 +9,15 @@ get '/surveys/create' do
   erb :'/make-survey/make-survey'
 end
 
-#TODO: figure out how to handle multi-question/answer creation
 post '/surveys/create' do
   title = params[:title]
   new_survey = Survey.create(title: title, user_id: 1)
   new_question = new_survey.questions.create(question_desc: params[:question])
   new_question.answers.create(answer_text: params['answer-option'])
   redirect "/surveys/#{new_survey.id}"
+  # survey = Survey.create(title: params[:survey][:title], user_id: current_user.id)
 
-  # survey = Sur.create(title: params[:survey][:title], user_id: current_user.id)
-
+  # @survey = Survey.create(title: title, user_id: session[:user_id])
 end
 
 get '/surveys/user/:id' do |id|
