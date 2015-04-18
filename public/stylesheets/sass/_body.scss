@@ -8,6 +8,7 @@
 }
 
 .container{
-	@include span-columns(6);
-	@include shift(3);
+	margin-top: 20%;
+	@include span-columns(12);
+	@include shift(0);
 }
