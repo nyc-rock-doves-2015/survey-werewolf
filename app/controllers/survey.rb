@@ -10,7 +10,11 @@ get '/surveys/create' do
 end
 
 post '/surveys/:id' do |id|
-  "New Response"
+  params["question"].each_pair do |question, answer|
+    this_question = Question.where(question_desc: question)
+    this_answer = Answer.where(answer_text: answer)
+    #TODO:Create a response belonging to the current user and current answer.
+  end
 end
 
 post '/surveys/create' do
