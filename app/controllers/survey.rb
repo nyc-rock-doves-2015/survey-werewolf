@@ -13,8 +13,7 @@ end
 post '/surveys/create' do
   title = params[:title]
   new_survey = Survey.create(title: title, user_id: 1)
-  new_question = new_survey.questions.create(question_desc: params[:question])
-  new_question.answers.create(answer_text: params['answer-option'])
+  # Tucker: see controllers/question.rb for where the code here was moved. -LTK
   redirect "/surveys/#{new_survey.id}"
 end
 
