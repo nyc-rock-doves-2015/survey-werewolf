@@ -1900,6 +1900,8 @@ html {
   background: #40526b;
   padding: 1.5em;
   width: 100%;
+  position: absolute;
+  bottom: 0;
   display: inline-block; }
   .footer-2 .footer-logo {
     margin-right: 1em;
@@ -2156,7 +2158,8 @@ html {
 .wrapper {
   max-width: 68em;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  height: 100%; }
   .wrapper::after {
     clear: both;
     content: "";
