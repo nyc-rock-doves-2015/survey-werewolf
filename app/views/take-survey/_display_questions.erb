@@ -1,0 +1,27 @@
+<% @questions.each do |question| %>
+<h3><%=question.question_desc%></h3>
+<%question.answers.each do |answer|%>
+<div class="button-group">
+<label>
+<input type="radio" name="button-group" value="item" checked>
+<span class="button-group-item">
+<%=answer.answer_text %></span>
+</label>
+</div>
+<% end %>
+<% end %>
+
+<!-- 
+
+<div class="side-image">
+  <div class="images-wrapper"></div>
+    <div class="side-image-content">
+      <h4>Topic Name</h4>
+      <h1>Message with a gradient image</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam assumenda nihil suscipit obcaecati sit, cum quod corporis adipisci ipsam, fugiat, quae error. Eaque commodi, dicta quidem explicabo mollitia inventore quibusdam.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam assumenda nihil suscipit obcaecati sit, cum quod corporis adipisci ipsam, fugiat, quae error. Eaque commodi, dicta quidem explicabo mollitia inventore quibusdam.</p>
+      <button>Read more</button>
+  </div>
+</div>
+
+ -->
