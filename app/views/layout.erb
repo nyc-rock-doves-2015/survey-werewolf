@@ -15,10 +15,13 @@
   <title>SurveyMonkey</title>
 </head>
 <body>
-<div id="content">
-    <%= erb :'_nav-top' %>            
+<div id="wrapper">
+  <%= erb :'_nav-top' %>            
+  <div class="container">
     <%= yield %>
+    </div>
   </div>
 </div>
 </body>
+<%= erb :'_footer'%>
 </html>

@@ -1,0 +1,12 @@
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
+
+.wrapper{
+	@include outer-container;
+}
+
+.container{
+	@include span-columns(6);
+	@include shift(3);
+}
