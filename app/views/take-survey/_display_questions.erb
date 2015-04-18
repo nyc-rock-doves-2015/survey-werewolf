@@ -1,17 +1,20 @@
-<% @questions.each do |question| %>
-<h3><%=question.question_desc%></h3>
-<%question.answers.each do |answer|%>
-<div class="button-group">
-<label>
-<input type="radio" name="button-group" value="item" checked>
-<span class="button-group-item">
-<%=answer.answer_text %></span>
-</label>
-</div>
-<% end %>
-<% end %>
+<form method="POST">
+  <% @questions.each do |question| %>
+  <h3><%=question.question_desc%></h3>
+    <%question.answers.each do |answer|%>
+    <div class="button-group">
+    <label>
+    <input type="radio" name="button-group" value="item" checked>
+    <span class="button-group-item">
+    <%=answer.answer_text %></span>
+    </label>
+    </div>
+    <% end %>
+  <% end %>
+  <input type="submit" name="Submit Taken Survey" value="Submit">
+</form>
 
-<!-- 
+<!--
 
 <div class="side-image">
   <div class="images-wrapper"></div>
