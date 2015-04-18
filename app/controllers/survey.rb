@@ -12,14 +12,9 @@ end
 post '/surveys/create' do
   title = params[:title]
   image = params[:image]
-  new_survey = Survey.create(title: title, image: image, user_id: 1,)
-  new_question = new_survey.questions.create(question_desc: params[:question])
-  new_question.answers.create(answer_text: params['answer-option'])
+  @survey = Survey.create(title: title, user_id: session[:user_id], image: image);
 
-  redirect "/surveys/#{new_survey.id}"
-  # survey = Survey.create(title: params[:survey][:title], user_id: current_user.id)
-
-  # @survey = Survey.create(title: title, user_id: session[:user_id])
+  redirect "/surveys/#{@survey.id}/question"
 end
 
 get '/surveys/user/:id' do |id|
