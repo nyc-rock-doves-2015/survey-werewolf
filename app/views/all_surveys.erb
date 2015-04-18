@@ -3,7 +3,7 @@
   <% @surveys.each do |survey| %>   
   <div class="card">
     <div class="card-image">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+      <img src="<%= survey.image %>" alt="">
     </div>
     <div class="card-header">
     	 <a href="/surveys/<%="#{survey.id}"%>"><%=survey.title%></a>
@@ -14,3 +14,4 @@
   </div>
     <% end %>
 </div>
+
