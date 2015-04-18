@@ -50,7 +50,7 @@ require APP_ROOT.join('config', 'database')
 
 CarrierWave.configure do |config|
   config.storage = :file
-  config.root = APP_ROOT + 'public'
-  config.store_dir = "/uploads"
+  config.root = APP_ROOT + 'public/'
+  config.store_dir = "uploads"
 end
 
