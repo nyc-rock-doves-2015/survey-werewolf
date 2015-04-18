@@ -9,10 +9,13 @@ get '/surveys/create' do
   erb :'/make-survey/make-survey'
 end
 
+post '/surveys/:id' do |id|
+  "New Response"
+end
+
 post '/surveys/create' do
   title = params[:title]
   @survey = Survey.create(title: title, user_id: session[:user_id])
-  # # Tucker: see controllers/question.rb for where the code here was moved. -LTK
   redirect "/surveys/#{@survey.id}/question"
 end
 
