@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-<form action="/uploads" method="POST" enctype ="multipart/form-data">
-	<strong>Username:</strong>
-	<input type="text" name="username">
-	<strong>File:</strong>
- 	<input type="file" name ="upload">
-	<button type = "submit">Upload</button>
-</form>
 
-=======
 <!-- Pseudocode:
 1. See textbox that says "Name this survey."
 2. Submit title.
@@ -17,11 +8,12 @@
 6. Generates question with 2 answer options. Once they've clicked enter on the last answer option, an additional submission form appears for answer options.
 7. Whenever they want, they click "submit question."
 8. At any time after they've submitted ONE question, they can click a "create survey" button that lives outside of the question creation form. -->
->>>>>>> 2101745a87d3b21a5088686e29799765f4b49635
 
 <!-- Tucker & Charles: follow the action and controller logic to see how this path
   gets us to adding questions. LTK -->
-<form class="name-survey-form" method="POST" action="/surveys/create">
+<form class="name-survey-form" method="POST" action="/surveys/create" enctype ="multipart/form-data">
+	<strong>File:</strong>
+ 	<input type="file" name ="image">
   <label>Survey Title</label>
   <input type="text" name="title">
   <input type="submit" value="Create Survey">

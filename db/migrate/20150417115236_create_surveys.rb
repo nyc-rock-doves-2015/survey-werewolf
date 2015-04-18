@@ -9,3 +9,4 @@ class CreateSurveys < ActiveRecord::Migration
     end
   end
 end
+User.first.surveys.id.image all
