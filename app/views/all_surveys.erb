@@ -1,6 +1,6 @@
-<% @surveys.each do |survey| %>   
 
 <div class="cards">
+  <% @surveys.each do |survey| %>   
   <div class="card">
     <div class="card-image">
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
@@ -12,5 +12,6 @@
       <p><%=survey.user.name%><br> By :<a href="/users/<%="#{survey.user_id}"%>"><%=survey.user.name%></a></p>
     </div>
   </div>
+    <% end %>
+
 </div>
-  <% end %>
