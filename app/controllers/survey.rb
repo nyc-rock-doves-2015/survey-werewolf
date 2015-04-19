@@ -14,7 +14,7 @@ post '/surveys/:id' do |id|
     this_answer = Answer.find_by(answer_text: answer)
     Response.create(user_id: session[:current_user_id], answer_id: this_answer["id"])
   end
-  "Results Page"
+  redirect "/surveys/#{id}/results"
 end
 
 post '/surveys/create' do
@@ -28,11 +28,6 @@ get '/surveys/user/:id' do |id|
   @user = User.find(id)
   @surveys = @user.surveys
   "List of #{@user.name}'s surveys"
-end
-
-get '/surveys/:id/results' do |id|
-  @survey = Survey.find(id)
-  "Results of #{@survey.title}"
 end
 
 #If owner: edit/delete/view results
