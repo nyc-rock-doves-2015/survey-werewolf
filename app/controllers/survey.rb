@@ -14,7 +14,7 @@ post '/surveys/:id' do |id|
     this_answer = Answer.find_by(answer_text: answer)
     Response.create(user_id: session[:current_user_id], answer_id: this_answer["id"])
   end
-  "Results Page"
+  redirect "/surveys/#{id}/results"
 end
 
 post '/surveys/create' do
