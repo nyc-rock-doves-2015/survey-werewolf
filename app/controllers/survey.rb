@@ -1,5 +1,10 @@
 enable :sessions
 
+
+get '/surveys/filter' do
+  "filtered surveys"
+end
+
 get '/surveys' do
   @surveys = Survey.all
   erb :'/all_surveys'
@@ -59,6 +64,8 @@ delete '/surveys/:id/delete' do |id|
   end
   redirect '/'
 end
+
+
 
 # carrierwave file uploader
 # post '/uploads' do
