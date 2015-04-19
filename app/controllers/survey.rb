@@ -11,10 +11,10 @@ end
 
 post '/surveys/:id' do |id|
   params["question"].each_pair do |question, answer|
-    this_question = Question.where(question_desc: question)
-    this_answer = Answer.where(answer_text: answer)
-    #TODO:Create a response belonging to the current user and current answer.
+    this_answer = Answer.find_by(answer_text: answer)
+    Response.create(user_id: session[:current_user_id], answer_id: this_answer["id"])
   end
+  "Results Page"
 end
 
 post '/surveys/create' do
