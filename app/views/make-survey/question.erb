@@ -1,16 +1,15 @@
-  <h1>Survey Name: <%= @survey.title %></h1>
 <form class="add-question-form" method="POST" action="">
-
-
+  <h1>Survey Name: <%= @survey.title %></h1><br>
   <input type="hidden" name="_method" value="PUT" />
   <h3>Add A Question</h3>
   <p><label>Question</label></p>
-  <p><input type='text' name='question'></p>
+  <p><input class="auto-focus" type='text' name='question'></p>
   <p><a href="#" id='add-response-option-field'>Add response Option</a></p>
   <label>Response 1: </label>
   <div class='response-option-container'>
     <input type='text' name='response-option-1'></p>
   </div>
+  <br>
   <input type="submit" value="Submit Question">
   </p>
 </form>
