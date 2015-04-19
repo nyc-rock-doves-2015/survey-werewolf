@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :password_digest
       t.references :response
+      t.references :survey
 
       t.timestamps
     end
