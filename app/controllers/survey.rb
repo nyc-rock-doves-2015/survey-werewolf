@@ -3,7 +3,6 @@ enable :sessions
 
 get '/surveys/filter' do
   @surveys = Survey.where("title = ?", params[:title])
-  flash error if nil
   if @surveys.length == 0
     redirect '/'
 

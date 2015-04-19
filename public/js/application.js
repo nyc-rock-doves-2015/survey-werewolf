@@ -21,15 +21,22 @@ $(document).ready(function() {
   
   $('.auto-focus:first').focus();
 
-  // error message for empty search results
-  $('#search').on('submit', function(e) {
-    e.preventDefault();
-    // this is grabbing the entire form..
-    var search = $('input').val();
-    console.log(search)
-    // add error message to container
-    var errorMessage = "<div class='flash-error'><span>No results found for " + search + "</span></div>";
-    $('.container').prepend(errorMessage);
+  // // error message for empty search results
+  // $('#search').on('submit', function(e) {
+  //   e.preventDefault();
+  //   //user input
+  //   var search = $('input').val();
+  //   // active record search
+
+
+
+  //   // need ajax call?
+
+
+
+  //   // add error message to container
+  //   var errorMessage = "<div class='flash-error'><span>No results found for " + search + "</span></div>";
+  //   $('.container').prepend(errorMessage);
   });
 
 
