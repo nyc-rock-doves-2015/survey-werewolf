@@ -1,0 +1,8 @@
+<ol>
+  <% @survey.questions.each do |question| %>
+    <h3><%= question.question_desc %></h3>
+    <% question.answers.each do |answer| %>
+      <li><%= answer.answer_text %>: <%= answer.responses.count %></li>
+    <% end %>
+  <% end %>
+</ol>
