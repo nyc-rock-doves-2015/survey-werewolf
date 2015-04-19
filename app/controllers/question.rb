@@ -13,5 +13,5 @@ put '/surveys/:id/question' do |id|
       new_question.answers.create(answer_text: params[param])
     end
   end
-  "Route to create next question"
+  redirect "/surveys/#{survey.id}/question"
 end
