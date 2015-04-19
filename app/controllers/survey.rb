@@ -2,7 +2,12 @@ enable :sessions
 
 
 get '/surveys/filter' do
+  # title = params[:title]
+  # title = "Books"
   @surveys = Survey.where("title = ?", params[:title])
+  puts
+  puts "title params = #{params[:title]}"
+  puts
   # flash error if nil
   # if @surveys.nil?
   #   redirect '/'
