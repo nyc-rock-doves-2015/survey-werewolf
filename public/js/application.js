@@ -18,4 +18,8 @@ $(document).ready(function() {
       }
     });
   });
+  
+  $('.auto-focus:first').focus();
+
+
 });
