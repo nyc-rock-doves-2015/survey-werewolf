@@ -5,15 +5,13 @@ get '/surveys/filter' do
   # title = params[:title]
   # title = "Books"
   @surveys = Survey.where("title = ?", params[:title])
-  puts
-  puts "title params = #{params[:title]}"
-  puts
-  # flash error if nil
-  # if @surveys.nil?
-  #   redirect '/'
-  # else
+  flash error if nil
+  if @surveys.length == 0
+    redirect '/'
+    # should be adding in refills error partial here
+  else
     erb :'/all_surveys'
-  # end
+  end
 end
 
 get '/surveys' do
