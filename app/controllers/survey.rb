@@ -20,19 +20,19 @@ get '/surveys/create' do
   erb :'/make-survey/make-survey'
 end
 
+post '/surveys/create' do
+  title = params[:title]
+  image = params[:image]
+  @survey = Survey.create(title: title, user_id: session[:user_id], image: image);
+  redirect "/surveys/#{@survey.id}/question"
+end
+
 post '/surveys/:id' do |id|
   params["question"].each_pair do |question, answer|
     this_answer = Answer.find_by(answer_text: answer)
     Response.create(user_id: session[:current_user_id], answer_id: this_answer["id"])
   end
   redirect "/surveys/#{id}/results"
-end
-
-post '/surveys/create' do
-  title = params[:title]
-  image = params[:image]
-  @survey = Survey.create(title: title, user_id: session[:user_id], image: image);
-  redirect "/surveys/#{@survey.id}/question"
 end
 
 get '/surveys/user/:id' do |id|
