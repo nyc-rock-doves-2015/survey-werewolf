@@ -2,5 +2,5 @@ enable :sessions
 
 get '/surveys/:id/results' do |id|
   @survey = Survey.find(id)
-  erb :'/results/results'
+  erb :'/results/show'
 end
