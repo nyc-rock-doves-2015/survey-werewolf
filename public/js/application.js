@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  var answer_number = 2;
+  var response_number = 2;
   // add a question to Make Survey form when user clicks on "add question"
-  $('#add-answer-option-field').on('click', function(event) {
-    var answerOptionNode = "<p><label>Answer Option " + answer_number + ": </label> <input type='text' name='answer-option-" + answer_number + "'></p>";
-    $('.answer-option-container').append(answerOptionNode);
-    answer_number++;
+  $('#add-response-option-field').on('click', function(event) {
+    var responseOptionNode = "<p><label>Response " + response_number + ": </label> <input type='text' name='response-option-" + response_number + "'></p>";
+    $('.response-option-container').append(responseOptionNode);
+    response_number++;
   });
 
   var menuToggle = $('#js-mobile-menu').unbind();
@@ -18,4 +18,26 @@ $(document).ready(function() {
       }
     });
   });
+  
+  $('.auto-focus:first').focus();
+
+  // // error message for empty search results
+  // $('#search').on('submit', function(e) {
+  //   e.preventDefault();
+  //   //user input
+  //   var search = $('input').val();
+  //   // active record search
+
+
+
+  //   // need ajax call?
+
+
+
+  //   // add error message to container
+  //   var errorMessage = "<div class='flash-error'><span>No results found for " + search + "</span></div>";
+  //   $('.container').prepend(errorMessage);
+  });
+
+
 });

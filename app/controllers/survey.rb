@@ -1,5 +1,16 @@
 enable :sessions
 
+
+get '/surveys/filter' do
+  @surveys = Survey.where("title = ?", params[:title])
+  if @surveys.length == 0
+    redirect '/'
+
+  else
+    erb :'/all_surveys'
+  end
+end
+
 get '/surveys' do
   @surveys = Survey.all
   erb :'/all_surveys'
@@ -54,6 +65,8 @@ delete '/surveys/:id/delete' do |id|
   end
   redirect '/'
 end
+
+
 
 # carrierwave file uploader
 # post '/uploads' do
