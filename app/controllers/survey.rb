@@ -2,7 +2,13 @@ enable :sessions
 
 
 get '/surveys/filter' do
-  "filtered surveys"
+  @surveys = Survey.where("title = ?", params[:title])
+  # flash error if nil
+  # if @surveys.nil?
+  #   redirect '/'
+  # else
+    erb :'/all_surveys'
+  # end
 end
 
 get '/surveys' do
