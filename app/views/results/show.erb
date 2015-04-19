@@ -1,0 +1,11 @@
+<h1>Results for <%= @survey.title %></h1>
+
+<% @survey.questions.each do |question| %>
+  <h3><%= question.question_desc %></h3>
+      <ol>
+        <% question.answers.each do |answer| %>
+          <li><%= answer.answer_text %>: <%= answer.responses.count %></li>
+        <% end %>
+        <br>
+      </ol>
+<% end %>
