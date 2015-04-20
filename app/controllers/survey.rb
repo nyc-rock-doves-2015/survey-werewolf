@@ -2,10 +2,10 @@ enable :sessions
 
 
 get '/surveys/filter' do
-  @surveys = Survey.where("title = ?", params[:title])
+  # apparently this isn't a safe method of query. I'll fix in after our series A.
+  @surveys = Survey.where("title LIKE ?", "%#{params[:title]}%")
   if @surveys.length == 0
     redirect '/'
-
   else
     erb :'/all_surveys'
   end
