@@ -7,6 +7,8 @@
 			<p>Surveys let you have data. Data. Hooray.</p>	
 		</div>
     <a href="/surveys"><button >Take A Survey</button></a> 
+      <%if current_user%>
     <a href="/surveys/create"><button >Create A Survey</button></a>
+		<%end%>
 	</div>
 </div>
