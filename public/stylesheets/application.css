@@ -677,9 +677,7 @@ header.navigation {
 .footer-2 {
   background: #40526b;
   padding: 1.5em;
-  width: 100%;
-  bottom: 0;
-  display: inline-block; }
+  width: 100%; }
   .footer-2 .navigation-wrapper {
     max-width: 68em;
     margin-left: auto;
