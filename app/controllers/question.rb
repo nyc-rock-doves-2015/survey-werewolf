@@ -13,5 +13,9 @@ put '/surveys/:id/question' do |id|
       new_question.answers.create(answer_text: params[param])
     end
   end
-  redirect "/surveys/#{survey.id}/question"
+  if params.include?("Generate")
+    redirect "/surveys/#{survey.id}"
+  else
+    redirect "/surveys/#{survey.id}/question"
+  end
 end
