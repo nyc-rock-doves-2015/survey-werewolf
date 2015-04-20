@@ -1,8 +1,0 @@
-<ol>
-  <% @surveys.each do |survey| %>
-    <li>
-    <a href="/surveys/<%="#{survey.id}"%>"><%=survey.title%></a>
-    <a href="/users/<%="#{survey.user_id}"%>"><%=survey.user.name%></a>
-  </li>
-  <% end %>
-</ol>

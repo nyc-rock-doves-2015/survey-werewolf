@@ -1,5 +1,16 @@
 enable :sessions
 
+
+get '/surveys/filter' do
+  # apparently this isn't a safe method of query. I'll fix in after our series A.
+  @surveys = Survey.where("title LIKE ?", "%#{params[:title]}%")
+  if @surveys.length == 0
+    redirect '/'
+  else
+    erb :'/all_surveys'
+  end
+end
+
 get '/surveys' do
   @surveys = Survey.all
   erb :'/all_surveys'
@@ -54,6 +65,8 @@ delete '/surveys/:id/delete' do |id|
   end
   redirect '/'
 end
+
+
 
 # carrierwave file uploader
 # post '/uploads' do

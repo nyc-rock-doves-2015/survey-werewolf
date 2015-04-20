@@ -1,7 +1,7 @@
 enable :sessions
 
 get "/" do
-  erb :"_landing-page"
+  erb :"/partials/_landing-page"
 end
 
 get '/signin' do
