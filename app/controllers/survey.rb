@@ -3,6 +3,10 @@ enable :sessions
 
 get '/surveys/filter' do
   # apparently this isn't a safe method of query. I'll fix in after our series A.
+  # it seems good to me....
+  #
+  # http://stackoverflow.com/questions/19105706/rails-4-like-query-activerecord-adds-quotes
+
   @surveys = Survey.where("title LIKE ?", "%#{params[:title]}%")
   if @surveys.length == 0
     redirect '/'
@@ -29,6 +33,8 @@ end
 
 post '/surveys/:id' do |id|
   params["question"].each_pair do |question, answer|
+    # No, you can use this_answer to create a response since Answer has_many
+    # responses  If you write foreign_key_id you'r enot using AR to help you!
     this_answer = Answer.find_by(answer_text: answer)
     Response.create(user_id: session[:current_user_id], answer_id: this_answer["id"])
   end
@@ -54,15 +60,16 @@ end
 # need to destroy image as well?
 delete '/surveys/:id/delete' do |id|
   survey = survey.find(id)
-  questions = survey.questions
-  answers = questions.answers
-  survey.destroy
-  answers.each do |answer|
-    answer.destroy
-  end
-  questions.each do |question|
-    question.destroy
-  end
+  #questions = survey.questions
+  #answers = questions.answers
+  survey.destroy # see AR dependent :destroy
+  # http://guides.rubyonrails.org/association_basics.html
+  #answers.each do |answer|
+    #answer.destroy
+  #end
+  #questions.each do |question|
+    #question.destroy
+  #end
   redirect '/'
 end
 

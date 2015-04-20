@@ -1,5 +1,6 @@
 enable :sessions
 
+# Why is / in auth?
 get "/" do
   erb :"/partials/_landing-page"
 end

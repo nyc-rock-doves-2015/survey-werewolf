@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  // Why 2, why not 3?
+  //
+  // I really feel like you could use some OO js to make something that manages
+  // the updating and appending and changing of the display state.
   var response_number = 2;
   // add a question to Make Survey form when user clicks on "add question"
   $('#add-response-option-field').on('click', function(event) {
@@ -20,6 +24,9 @@ $(document).ready(function() {
   });
   
   $('.auto-focus:last').focus();
+
+  /* Don't commit commented out garbage like this, delete it.  It look like you
+  * got confused and gave up.*/
 
   // // error message for empty search results
   // $('#search').on('submit', function(e) {
