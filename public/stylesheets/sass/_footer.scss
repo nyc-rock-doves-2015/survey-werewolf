@@ -41,6 +41,13 @@
   bottom:0;
   display: inline-block;
 
+.navigation-wrapper {
+    @include clearfix;
+    @include outer-container;
+    position: relative;
+    z-index: 9999;
+  }
+
   .footer-logo {
     margin-right: 1em;
     margin-bottom: 1em;
