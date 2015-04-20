@@ -11,10 +11,14 @@
         <% end %>
         <!-- <li class="nav-link"><a href="javascript:void(0)"></a></li> -->
         <!-- <li class="nav-link"><a href="javascript:void(0)">Contact</a></li> -->
+        <%if current_user%>
         <li class="nav-link more"><a href="javascript:void(0)">Surveys</a>
           <ul class="submenu">
             <li><a href="/surveys">Take A Survey</a></li>
             <li><a href="/surveys/create">Create A Survey </a></li>
+            <%else%>
+            <li class="nav-link"><a href="/surveys">Surveys</a></li>
+            <%end%>
             <!-- <li class="more"><a href="javascript:void(0)">Item with submenu</a>
               <ul class="submenu">
                 <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
