@@ -37,7 +37,7 @@ $(document).ready(function() {
   //   // add error message to container
   //   var errorMessage = "<div class='flash-error'><span>No results found for " + search + "</span></div>";
   //   $('.container').prepend(errorMessage);
-  });
+  // });
 
 
 });

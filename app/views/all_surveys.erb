@@ -2,11 +2,12 @@
 <div class="cards">
   <% @surveys.each do |survey| %>   
   <div class="card">
+    <a href="/surveys/<%="#{survey.id}"%>">
     <div class="card-image">
       <img src="<%= survey.image %>" alt="">
     </div>
     <div class="card-header">
-    	 <a href="/surveys/<%="#{survey.id}"%>"><%=survey.title%></a>
+    	 <%=survey.title%></a>
     </div>
     <div class="card-copy">
       <p><%=survey.user.name%><br> By: <a href="/users/<%="#{survey.user_id}"%>"><%=survey.user.name%></a></p>
