@@ -8,13 +8,15 @@
 
   <title>SurveyMonkey</title>
 </head>
-<%= erb :'/partials/_nav-top' %>
 <body>
+<%= erb :'/partials/_nav-top' %>
 <div class="wrapper">
   <div class="container">
     <%= yield %>
     </div>
+    <div class="push"></div>
+  </div>
+  <%= erb :'/partials/_footer'%>
 </body>
-</div>
-<%= erb :'/partials/_footer'%>
+
 </html>
