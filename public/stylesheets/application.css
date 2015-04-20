@@ -678,7 +678,6 @@ header.navigation {
   background: #40526b;
   padding: 1.5em;
   width: 100%;
-  position: absolute;
   bottom: 0;
   display: inline-block; }
   .footer-2 .footer-logo {
@@ -949,7 +948,7 @@ html {
   margin-right: 2.35765%;
   width: 82.94039%;
   margin-left: 8.5298%;
-  padding-top: 8%; }
+  padding: 80px 0 100px; }
   .container:last-child {
     margin-right: 0; }
 
