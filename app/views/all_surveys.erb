@@ -1,6 +1,8 @@
 
 <div class="cards">
-  <% @surveys.each do |survey| %>   
+  <% @surveys.each do |survey| %>  
+  <!-- <div id="js-fadeInElement" class="fade-in-element"> -->
+ 
   <div class="card">
     <a href="/surveys/<%="#{survey.id}"%>">
     <div class="card-image">
@@ -13,6 +15,6 @@
       <p><%=survey.user.name%><br> By: <a href="/users/<%="#{survey.user_id}"%>"><%=survey.user.name%></a></p>
     </div>
   </div>
+<!-- </div> -->
     <% end %>
 </div>
-
